@@ -12,7 +12,7 @@ import urllib
 from urllib import request
 import itertools
 from urllib import parse
-
+import queue
 
 
 def download(url, num_retries=5, user_agent='wswp', proxy=None):
@@ -58,7 +58,7 @@ def spider_test(url):
             num_errors = 0
 
 
-def link_crawler(seed_url, link_regex):
+def link_crawler(seed_url, link_regex=None, delay=5, max_depth=1):
     crawl_queue = [seed_url]
     seen = set(crawl_queue)
     while crawl_queue:
