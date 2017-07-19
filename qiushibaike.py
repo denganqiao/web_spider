@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
 
-import urllib2
 import urllib
 import re
-import thread
 import time
-
+import threading
 
 # ----------- 加载处理糗事百科 -----------
 class Spider_Model:
@@ -20,8 +18,8 @@ class Spider_Model:
         myUrl = "http://m.qiushibaike.com/hot/page/" + page
         user_agent = 'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)'
         headers = {'User-Agent': user_agent}
-        req = urllib2.Request(myUrl, headers=headers)
-        myResponse = urllib2.urlopen(req)
+        req = urllib.Request(myUrl, headers=headers)
+        myResponse = urllib.urlopen(req)
         myPage = myResponse.read()
         # encode的作用是将unicode编码转换成其他编码的字符串
         # decode的作用是将其他编码的字符串转换成unicode编码
@@ -50,14 +48,14 @@ class Spider_Model:
                     self.page += 1
                     self.pages.append(myPage)
                 except:
-                    print '无法链接糗事百科！'
+                    print('无法链接糗事百科！')
             else:
                 time.sleep(1)
 
     def ShowPage(self, nowPage, page):
         for items in nowPage:
-            print u'第%d页' % page, items[0], items[1]
-            myInput = raw_input()
+            print(u'第%d页' % page, items[0], items[1])
+            myInput = input()
             if myInput == "quit":
                 self.enable = False
                 break
@@ -66,10 +64,10 @@ class Spider_Model:
         self.enable = True
         page = self.page
 
-        print u'正在加载中请稍候......'
+        print(u'正在加载中请稍候......')
 
         # 新建一个线程在后台加载段子并存储
-        thread.start_new_thread(self.LoadPage, ())
+        threading.start_new_thread(self.LoadPage, ())
 
         # ----------- 加载处理糗事百科 -----------
         while self.enable:
@@ -84,7 +82,7 @@ class Spider_Model:
                 # ----------- 程序的入口处 -----------
 
 
-print u"""
+print(u"""
 ---------------------------------------
    程序：糗百爬虫
    版本：1.0
@@ -94,9 +92,9 @@ print u"""
    操作：输入quit退出阅读糗事百科
    功能：按下回车依次浏览今日的糗百热点
 ---------------------------------------
-"""
+""")
 
-print u'请按下回车浏览今日的糗百内容：'
-raw_input(' ')
+print(u'请按下回车浏览今日的糗百内容：')
+input(' ')
 myModel = Spider_Model()
 myModel.Start()
