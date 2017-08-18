@@ -26,4 +26,4 @@ class DingdianPipeline(object):
                 category = item['category']
                 # xs_status = item['serialstatus']
                 Sql.insert_dd_name(xs_name, xs_author, category, name_id)
-                print('开始存入数据')
+                print('开始存小说标题')

@@ -32,8 +32,8 @@ class Myspider(scrapy.Spider):
             novelname = td.find('td', class_='L').find('a')['title'][0:-2]
             novelurl = td.find('td', class_='L').find('a')['href']
             novelauthor = td.find('td', class_='C').get_text()
-            novelstatus = td.find_all('td', class_='C')[2].get_text()
-            yield Request(novelurl, callback=self.chapterurl, meta={'name':novelname, 'url':novelurl, 'author':novelauthor, 'status':novelstatus})
+            # novelstatus = td.find_all('td', class_='C')[2].get_text()
+            yield Request(novelurl, callback=self.chapterurl, meta={'name':novelname, 'url':novelurl, 'author':novelauthor})
 
     def chapterurl(self, response):
         item = DingdianItem()
@@ -41,7 +41,7 @@ class Myspider(scrapy.Spider):
         item['novelurl'] = response.meta['url']
         item['author'] = response.meta['author']
         item['category'] = BeautifulSoup(response.text, 'lxml').find('table', bgcolor='#E4E4E4').find('a').get_text()
-        item['name_id'] = response.meta['url'][-5:]
-        item['serialstatus'] = response.meta['status']
-        print(item)
+        item['name_id'] = response.meta['url'][-5:].replace('/', '')
+        # item['serialstatus'] = response.meta['status']
+        # print(item)
         return item
