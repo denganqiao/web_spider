@@ -28,3 +28,18 @@ class DingdianItem(scrapy.Item):
     # 小说编号
     name_id = Field()
 
+
+
+class DcontentItem(scrapy.Item):
+    # 小说编号
+    id_name = Field()
+    # 章节内容
+    chaptercontent = Field()
+    # 用于绑定章节顺序
+    num = Field()
+    # 章节地址
+    chapterurl = Field()
+    # 章节名字
+    chaptername = Field()
+
+

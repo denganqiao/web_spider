@@ -8,7 +8,7 @@
 from .sql import Sql
 import sys
 sys.path.append('../..')
-from dingdian.items import DingdianItem
+from dingdian.items import DingdianItem, DcontentItem
 
 
 class DingdianPipeline(object):
@@ -27,3 +27,14 @@ class DingdianPipeline(object):
                 # xs_status = item['serialstatus']
                 Sql.insert_dd_name(xs_name, xs_author, category, name_id)
                 print('开始存小说标题')
+
+
+        if isinstance(item, DcontentItem):
+            url = item['chapterurl']
+            name_id = item['id_name']
+            num_id = item['num']
+            xs_chaptername = item['chaptername']
+            xs_content = item['chaptercontent']
+            Sql.insert_dd_chapter_name(xs_chaptername, xs_content, name_id, num_id, url)
+            print('小说存储完毕')
+            return item

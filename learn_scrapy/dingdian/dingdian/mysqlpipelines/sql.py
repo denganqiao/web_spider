@@ -49,3 +49,25 @@ class Sql:
         return cursor.fetchall()[0]
 
 
+    @classmethod
+    def insert_dd_chapter_name(cls, xs_chaptername, xs_content, id_name, num_id, url):
+        sql = 'INSERT INTO dd_chaptername (`xs_chaptername`, `xs_content`, `id_name`, `num_id`, `url`) VALUES (%(xs_chaptername)s, %(xs_content)s, %(id_name)s, %(num_id)s, %(url)s'
+        value = {
+            'xs_chaptername':xs_chaptername,
+            'xs_content':xs_content,
+            'id_name':id_name,
+            'num_id':num_id,
+            'url':url
+        }
+
+        cursor.execute(sql, value)
+        conn.commit()
+
+    @classmethod
+    def select_chapter(cls, url):
+        sql = "SELECT EXISTS(SELECT 1 FROM dd_chaptername WHERE url=%(url)s)"
+        value = {
+            'url':url
+        }
+        cursor.execute(sql, value)
+        return cursor.fetchall()[0]
