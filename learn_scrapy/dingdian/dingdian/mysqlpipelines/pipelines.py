@@ -4,3 +4,26 @@
 @author: James Zhang
 @date:   
 """
+
+from .sql import Sql
+import sys
+sys.path.append('../..')
+from dingdian.items import DingdianItem
+
+
+class DingdianPipeline(object):
+
+    def process_item(self, item, spider):
+        if isinstance(item, DingdianItem):
+            name_id = item['name_id']
+            ret = Sql.select_name(name_id)
+            if ret[0] == 1:
+                print('已经存在了')
+                pass
+            else:
+                xs_name = item['name']
+                xs_author = item['author']
+                category = item['category']
+                # xs_status = item['serialstatus']
+                Sql.insert_dd_name(xs_name, xs_author, category, name_id)
+                print('开始存入数据')

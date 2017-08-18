@@ -41,6 +41,7 @@ class Myspider(scrapy.Spider):
         item['novelurl'] = response.meta['url']
         item['author'] = response.meta['author']
         item['category'] = BeautifulSoup(response.text, 'lxml').find('table', bgcolor='#E4E4E4').find('a').get_text()
-        item['name_id'] = str(response.url)[-5:]
+        item['name_id'] = response.meta['url'][-5:]
         item['serialstatus'] = response.meta['status']
+        print(item)
         return item
