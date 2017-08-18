@@ -18,7 +18,7 @@ class DingdianPipeline(object):
             name_id = item['name_id']
             ret = Sql.select_name(name_id)
             if ret[0] == 1:
-                print('已经存在了')
+                print('标题已存在')
                 pass
             else:
                 xs_name = item['name']
@@ -35,6 +35,6 @@ class DingdianPipeline(object):
             num_id = item['num']
             xs_chaptername = item['chaptername']
             xs_content = item['chaptercontent']
-            Sql.insert_dd_chapter_name(xs_chaptername, xs_content, name_id, num_id, url)
+            Sql.insert_dd_chaptername(xs_chaptername, xs_content, name_id, num_id, url)
             print('小说存储完毕')
             return item
