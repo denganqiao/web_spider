@@ -4,6 +4,9 @@
     <list default="true" id="68b2bf8e-4538-4c06-ab91-116756a787ef" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dazongdianping/dianpingshop" afterPath="$PROJECT_DIR$/dazongdianping/dianpingshop" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zhihu/zhihu-python" afterPath="$PROJECT_DIR$/zhihu/zhihu-python" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shiancha/sac_spider.ipynb" afterPath="$PROJECT_DIR$/shiancha/sac_spider.ipynb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shiancha/酒类-不合格.csv" afterPath="$PROJECT_DIR$/shiancha/酒类-不合格.csv" />
     </list>
     <ignored path="web_spider.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,45 +27,53 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pipelines.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/learn_scrapy/dingdian/dingdian/mysqlpipelines/pipelines.py">
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zhihuuser/zhihuuser/spiders/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="828">
-              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="zhihu.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zhihuuser/zhihuuser/spiders/zhihu.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-182">
+              <caret line="38" column="19" selection-start-line="38" selection-start-column="19" selection-end-line="38" selection-end-column="19" />
               <folding>
-                <element signature="e#83#103#0" expanded="true" />
+                <marker date="1503298516884" expanded="true" signature="156:1082" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/learn_scrapy/dingdian/dingdian/settings.py">
+        <entry file="file://$PROJECT_DIR$/zhihuuser/zhihuuser/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2415">
-              <caret line="105" column="39" selection-start-line="105" selection-start-column="39" selection-end-line="105" selection-end-column="39" />
+            <state relative-caret-position="621">
+              <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sql.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/learn_scrapy/dingdian/dingdian/mysqlpipelines/sql.py">
+      <file leaf-file-name="items.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zhihuuser/zhihuuser/items.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="299">
-              <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-              <folding>
-                <element signature="e#82#104#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="1311">
+              <caret line="57" column="25" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="dingdian.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/learn_scrapy/dingdian/dingdian/spiders/dingdian.py">
+      <file leaf-file-name="pipelines.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/zhihuuser/zhihuuser/pipelines.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="76" column="45" selection-start-line="76" selection-start-column="45" selection-end-line="76" selection-end-column="45" />
+            <state relative-caret-position="322">
+              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -104,6 +115,10 @@
         <option value="$PROJECT_DIR$/learn_scrapy/dingdian/dingdian/spiders/dingdian.py" />
         <option value="$PROJECT_DIR$/learn_scrapy/dingdian/dingdian/mysqlpipelines/sql.py" />
         <option value="$PROJECT_DIR$/learn_scrapy/dingdian/dingdian/settings.py" />
+        <option value="$PROJECT_DIR$/zhihuuser/zhihuuser/items.py" />
+        <option value="$PROJECT_DIR$/zhihuuser/zhihuuser/settings.py" />
+        <option value="$PROJECT_DIR$/zhihuuser/zhihuuser/spiders/zhihu.py" />
+        <option value="$PROJECT_DIR$/zhihuuser/zhihuuser/pipelines.py" />
       </list>
     </option>
   </component>
@@ -173,6 +188,60 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="web_spider" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web_spider" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web_spider" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zhihuuser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web_spider" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web_spider" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zhihuuser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zhihuuser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web_spider" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web_spider" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zhihuuser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zhihuuser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spiders" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -454,11 +523,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1303" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19033001" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15656178" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -486,6 +555,13 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/dazongdianping/dianpingshop" />
+      <path value="$PROJECT_DIR$/zhihu/zhihu-python" />
+      <path value="$PROJECT_DIR$/zhihu/ZhihuSpider" />
+    </ignored-roots>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <default-breakpoints>
@@ -499,41 +575,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/learn_scrapy/dingdian/dingdian/items.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="28" column="14" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tutorial/tutorial/items.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tutorial/tutorial/items.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coolscrapy/coolscrapy/items.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tutorial/tutorial/items.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/coolscrapy/coolscrapy/items.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="460">
@@ -674,7 +715,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/learn_scrapy/dingdian/dingdian/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2415">
+        <state relative-caret-position="2187">
           <caret line="105" column="39" selection-start-line="105" selection-start-column="39" selection-end-line="105" selection-end-column="39" />
           <folding />
         </state>
@@ -682,10 +723,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/learn_scrapy/dingdian/dingdian/mysqlpipelines/pipelines.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="828">
+        <state relative-caret-position="591">
           <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
           <folding>
-            <element signature="e#83#103#0" expanded="true" />
+            <element signature="e#83#103#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -695,7 +736,7 @@
         <state relative-caret-position="299">
           <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
           <folding>
-            <element signature="e#82#104#0" expanded="true" />
+            <element signature="e#82#104#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -704,6 +745,48 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="76" column="45" selection-start-line="76" selection-start-column="45" selection-end-line="76" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhihuuser/zhihuuser/spiders/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhihuuser/zhihuuser/items.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1311">
+          <caret line="57" column="25" selection-start-line="57" selection-start-column="25" selection-end-line="57" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhihuuser/zhihuuser/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhihuuser/zhihuuser/spiders/zhihu.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-182">
+          <caret line="38" column="19" selection-start-line="38" selection-start-column="19" selection-end-line="38" selection-end-column="19" />
+          <folding>
+            <marker date="1503298516884" expanded="true" signature="156:1082" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zhihuuser/zhihuuser/pipelines.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
         </state>
       </provider>
