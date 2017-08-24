@@ -4,6 +4,14 @@ import json
 from scrapy import Spider, Request
 from zhihuuser.items import UserItem
 
+"""
+gender:
+1  male
+0  female
+-1 unknow
+"""
+
+
 class ZhihuSpider(scrapy.Spider):
     name = 'zhihu'
     allowed_domains = ['www.zhihu.com']
