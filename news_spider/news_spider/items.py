@@ -19,3 +19,4 @@ class NewsItem(Item):
     contents = Field()
     url = Field()
     comments = Field()
+    time = Field()

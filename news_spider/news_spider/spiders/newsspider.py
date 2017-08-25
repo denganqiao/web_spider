@@ -37,6 +37,8 @@ class NeteaseNewsSpider(CrawlSpider):
         sel = Selector(response)
         pattern = re.match(self.url_pattern, str(response.url))
         source = 'news.163.com'
+        if sel.xpath('//div[@class="post_time_source"]/text()'):
+            time = sel.xpath('//div[@class="post_time_source"]/text()').extract_first().split()[0] + ' ' + sel.xpath('//div[@class="post_time_source"]/text()').extract_first().split()[1]
         date = '20' + pattern.group(2) + '/' + pattern.group(3)[0:2] + '/' + pattern.group(3)[2:]
         newsId = pattern.group(4)
         url = response.url
@@ -49,6 +51,7 @@ class NeteaseNewsSpider(CrawlSpider):
                                                              'url':url,
                                                              'title':title,
                                                              'contents':contents,
+                                                             'time':time
                                                              })
 
     def parse_comment(self, response):
@@ -61,6 +64,7 @@ class NeteaseNewsSpider(CrawlSpider):
         item['title'] = response.meta['title']
         item['contents'] = response.meta['contents']
         item['comments'] = result['cmtAgainst'] + result['cmtVote'] + result['rcount']
+        item['time'] = response.meta['time']
         return item
 
 
@@ -84,6 +88,8 @@ class SinaNewsSpider(CrawlSpider):
             pattern = re.match(self.url_pattern, str(response.url))
             source = 'news.sina.com.cn'
             date = pattern.group(2).replace('-','/')
+            if sel.xpath('//span[@class="time-source"]/text()'):
+                time = sel.xpath('//span[@class="time-source"]/text()').extract_first().split()[0]
             newsId = pattern.group(3)
             url = response.url
             contents = ListCombiner(sel.xpath('//p/text()').extract()[:-3])
@@ -97,6 +103,7 @@ class SinaNewsSpider(CrawlSpider):
                                                                  'url':url,
                                                                  'title':title,
                                                                  'contents':contents,
+                                                                 'time':time
                                                                 })
 
     def parse_comment(self, response):
@@ -112,6 +119,7 @@ class SinaNewsSpider(CrawlSpider):
         item['source'] = response.meta['source']
         item['date'] = response.meta['date']
         item['newsId'] = response.meta['newsId']
+        item['time'] = response.meta['time']
         return item
 
 
