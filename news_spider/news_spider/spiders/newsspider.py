@@ -24,12 +24,14 @@ def ListCombiner(lst):
 
 class NeteaseNewsSpider(CrawlSpider):
     name = "netease_news_spider"
-    # allowed_domains = ['news.163.com']
+    allowed_domains = ['news.163.com']
     start_urls = ['http://news.163.com/']
 
     # http://news.163.com/17/0823/20/CSI5PH3Q000189FH.html
     url_pattern = r'(http://news\.163\.com)/(\d{2})/(\d{4})/\d+/(\w+)\.html'
-    rules = [Rule(LxmlLinkExtractor(allow=[url_pattern]), callback='parse_news', follow=True)]
+    rules = [
+        Rule(LxmlLinkExtractor(allow=[url_pattern]), callback='parse_news', follow=True)
+    ]
 
     def parse_news(self, response):
         sel = Selector(response)
@@ -48,7 +50,6 @@ class NeteaseNewsSpider(CrawlSpider):
                                                              'title':title,
                                                              'contents':contents,
                                                              })
-        # return item
 
     def parse_comment(self, response):
         result = json.loads(response.text)
@@ -64,7 +65,50 @@ class NeteaseNewsSpider(CrawlSpider):
 
 
 
+class SinaNewsSpider(CrawlSpider):
+    name = "sina_news_spider"
+    allowed_domains = ['news.sina.com.cn']
+    start_urls = ['http://news.sina.com.cn']
+    # http://finance.sina.com.cn/review/hgds/2017-08-25/doc-ifykkfas7684775.shtml
+    url_pattern = r'(http://(?:\w+\.)*news\.sina\.com\.cn)/.*/(\d{4}-\d{2}-\d{2})/doc-(.*)\.shtml'
 
+    rules = [
+        Rule(LxmlLinkExtractor(allow=[url_pattern]), callback='parse_news', follow=True)
+    ]
+
+    def parse_news(self, response):
+        sel = Selector(response)
+        if sel.xpath("//h1[@id='artibodyTitle']/text()"):
+            title = sel.xpath("//h1[@id='artibodyTitle']/text()").extract()[0]
+            pattern = re.match(self.url_pattern, str(response.url))
+            source = 'news.sina.com.cn'
+            date = pattern.group(2).replace('-','/')
+            newsId = pattern.group(3)
+            url = response.url
+            contents = ListCombiner(sel.xpath('//p/text()').extract()[:-3])
+            comment_elements = sel.xpath("//meta[@name='sudameta']").xpath('@content').extract()[1]
+            comment_channel = comment_elements.split(';')[0].split(':')[1]
+            comment_id = comment_elements.split(';')[1].split(':')[1]
+            comment_url = 'http://comment5.news.sina.com.cn/page/info?version=1&format=js&channel={}&newsid={}'.format(comment_channel,comment_id)
+            yield Request(comment_url, self.parse_comment, meta={'source':source,
+                                                                 'date':date,
+                                                                 'newsId':newsId,
+                                                                 'url':url,
+                                                                 'title':title,
+                                                                 'contents':contents,
+                                                                })
+
+    def parse_comment(self, response):
+        comments = re.findall(r'"total": (\d*)\,', response.text)[0]
+        item = NewsItem()
+        item['comments'] = comments
+        item['title'] = response.meta['title']
+        item['url'] = response.meta['url']
+        item['contents'] = response.meta['contents']
+        item['source'] = response.meta['source']
+        item['date'] = response.meta['date']
+        item['newsId'] = response.meta['newsId']
+        return item
 
 
 class TencentNewsSpider(CrawlSpider):
@@ -75,3 +119,10 @@ class TencentNewsSpider(CrawlSpider):
 class SohuNewsSpider(CrawlSpider):
     name = "sohu_news_spider"
     pass
+
+
+
+
+
+
+
