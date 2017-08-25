@@ -19,7 +19,7 @@ def ListCombiner(lst):
     string = ""
     for e in lst:
         string += e
-    return string.replace(' ','').replace('\n','').replace('\t','').replace('\xa0','')
+    return string.replace(' ','').replace('\n','').replace('\t','').replace('\xa0','').replace('\u3000','')
 
 
 class NeteaseNewsSpider(CrawlSpider):
@@ -71,6 +71,7 @@ class SinaNewsSpider(CrawlSpider):
     start_urls = ['http://news.sina.com.cn']
     # http://finance.sina.com.cn/review/hgds/2017-08-25/doc-ifykkfas7684775.shtml
     url_pattern = r'(http://(?:\w+\.)*news\.sina\.com\.cn)/.*/(\d{4}-\d{2}-\d{2})/doc-(.*)\.shtml'
+    # url_pattern = r'(http://(?:\w+\.)*news\.sina\.com\.cn)/.*/(2017-08-25)/doc-(.*)\.shtml'
 
     rules = [
         Rule(LxmlLinkExtractor(allow=[url_pattern]), callback='parse_news', follow=True)
@@ -99,7 +100,10 @@ class SinaNewsSpider(CrawlSpider):
                                                                 })
 
     def parse_comment(self, response):
-        comments = re.findall(r'"total": (\d*)\,', response.text)[0]
+        if re.findall(r'"total": (\d*)\,', response.text):
+            comments = re.findall(r'"total": (\d*)\,', response.text)[0]
+        else:
+            comments = 0
         item = NewsItem()
         item['comments'] = comments
         item['title'] = response.meta['title']
